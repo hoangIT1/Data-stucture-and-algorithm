@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int ucln(int a, int b)
+{
+    int r;
+    while (a%b!=0)
+    {
+        r=a%b;
+        a=b;
+        b=r;
+    }
+    return b;
+}
+int main()
+{
+    int n,i,j=0;
+    scanf("%d",&n);
+    int *tu=calloc(n,sizeof(int));
+    int *mau=calloc(n,sizeof(int));
+    for (i=1;i<=n;i++)
+    {
+        scanf("%d %d",&tu[j],&mau[j]);
+        j++;
+    }
+    int tmptu=tu[0];
+    int tmpmau=mau[0];
+    for (j=1;j<n;j++)
+    {
+        tmptu=tmptu*mau[j]+tmpmau*tu[j];
+        tmpmau=tmpmau*mau[j];
+        int z=ucln(tmptu,tmpmau);
+        tmptu/=z;
+        tmpmau/=z;
+    }
+
+    printf("%d/%d",tmptu,tmpmau);
+
+}
