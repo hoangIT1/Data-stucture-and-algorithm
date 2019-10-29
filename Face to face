@@ -3,7 +3,7 @@
 
 int main()
 {
-    int start,question,i,sumtime=0;
+    int start,question,i,time=0;
     do
     {
         scanf("%d",&start);
@@ -20,15 +20,15 @@ int main()
     }
     for (i=0;i<question;i++)
     {
-        sumtime+=t[i];
-        if (sumtime>210)
+        time+=t[i];
+        if (time>210)
         {
             printf("%d",start);
             break;
         }
         if (r[i]=='T') start=(start+1)%8;
     }
-    if (sumtime<=210)
+    if (time<=210)
     {
         printf("%d",start);
     }
