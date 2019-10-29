@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int start,question,i,sumtime=0;
+    do
+    {
+        scanf("%d",&start);
+    }while (start<1||start>8);
+    do
+    {
+        scanf("%d",&question);
+    }while (question<1||question>100);
+    int *t=calloc(question,sizeof(int));
+    char *r=calloc(question,sizeof(char));
+    for (i=0;i<question;i++)
+    {
+        scanf("%d %s",&t[i],&r[i]);
+    }
+    for (i=0;i<question;i++)
+    {
+        sumtime+=t[i];
+        if (sumtime>210)
+        {
+            printf("%d",start);
+            break;
+        }
+        if (r[i]=='T') start=(start+1)%8;
+    }
+    if (sumtime<=210)
+    {
+        printf("%d",start);
+    }
+    return 0;
+}
