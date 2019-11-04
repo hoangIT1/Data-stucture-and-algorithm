@@ -1,3 +1,6 @@
+//input is a string S with length not pass 10^6 include characters from a to z.
+//The requirement for you is count which letter appears the most in the string!!!
+//This code was authorized by Duong Minh Hoang
 #include <iostream>
 #include <string>
 #include <stdlib.h>
