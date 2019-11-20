@@ -23,7 +23,6 @@ int finded(long long m, long long k)
     if (k==(m-1)/2)
     {
         return n-i;
-        i=0;
     }
     if (k>(m-1)/2)
     {
